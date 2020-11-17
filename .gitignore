@@ -5,3 +5,5 @@ lib
 docs
 package-lock.json
 *.tgz
+jest
+junit.xml

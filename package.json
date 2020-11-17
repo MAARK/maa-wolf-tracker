@@ -31,7 +31,11 @@
     "verbose": true,
     "reporters": [
       "default",
-      "jest-junit"
+      [ 
+        "jest-junit", {
+      "outputDirectory": "jest",
+      "outputName": "junit.xml"
+    } ]
     ],
     "moduleNameMapper": {
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
