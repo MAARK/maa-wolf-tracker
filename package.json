@@ -1,5 +1,5 @@
 {
-  "name": "@maarkllc/aem-redux-launch",
+  "name": "@maarkllc/wolf-tracker",
   "version": "1.0.0",
   "description": "Redux middleware for triggering AEM analytics direct-call rules based on redux actions",
   "main": "index.js",

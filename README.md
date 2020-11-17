@@ -1,4 +1,8 @@
-# AEM Redux Launch
+[ WIP ]
+# Wolf Tracker
+
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/MAARK/maa-wolf-tracker)
+
 A redux middleware for triggering Adobe Launch direct-call rules. 
 
 ### Requirements
