@@ -27,9 +27,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run test
       - store_test_results:
-          path: ./jest/junit.xml
+          path: jest
       - store_artifacts:
-          path: ./jest/junit.xml
+          path: jest
       - persist_to_workspace:
           root: ~/repo
           paths: .
