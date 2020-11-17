@@ -11,7 +11,7 @@ defaults: &defaults
 
 # Orchestrate or schedule a set of jobs
 jobs:
-  run_tests:
+  setup_jobs:
     <<: *defaults
     steps:
       - checkout
@@ -25,6 +25,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+  run_tests:
+    <<: *defaults
+    steps:
       - run: npm run test
       - store_test_results:
           path: jest
@@ -73,6 +76,14 @@ workflows:
   #  Runs jest build and sets stores build  info within circleci
  test_build_publish:
     jobs:
+      - setup_jobs:
+          filters:
+            branches:
+              only:
+                - develop
+                - release
+            tags:
+              only: /^v.*/
       - run_tests:
           filters:
             branches:
