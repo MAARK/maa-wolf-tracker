@@ -31,6 +31,8 @@ jobs:
   run_tests:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/repo
       - run: npm run test
       - store_test_results:
           path: jest
