@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="0" time="2.321">
+  <testsuite name="Test Deepfind function" errors="0" failures="0" skipped="0" timestamp="2020-11-07T00:31:53" time="1.173" tests="2">
+    <testcase classname="Test Deepfind function should return correct string" name="Test Deepfind function should return correct string" time="0.002">
+    </testcase>
+    <testcase classname="Test Deepfind function should find mapped elements within the store" name="Test Deepfind function should find mapped elements within the store" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test direct event trigger" errors="0" failures="0" skipped="0" timestamp="2020-11-07T00:31:53" time="1.177" tests="1">
+    <testcase classname="test direct event trigger should trigger satelite track" name="test direct event trigger should trigger satelite track" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="trigger actions" errors="0" failures="0" skipped="0" timestamp="2020-11-07T00:31:53" time="1.178" tests="1">
+    <testcase classname="trigger actions should dispatch actions" name="trigger actions should dispatch actions" time="0.004">
+    </testcase>
+  </testsuite>
+</testsuites>
