@@ -1,0 +1,119 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10.16.3-browsers
+
+# Use a package of configuration called an orb.
+# orbs:
+# Declare a dependency on the welcome-orb
+
+# Orchestrate or schedule a set of jobs
+jobs:
+  run_tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+      - attach_workspace:
+          at: ~/repo
+      - run: npm run test
+      - store_test_results:
+          path: jest
+      - store_artifacts:
+          path: jest
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  register_npm:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  
+  package_release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Publish package
+          command: npm run build
+      - run:
+          name: Publish package
+          command: npm publish --access public
+
+  beta_release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Publish package
+          command: npm run build
+      - run:
+          command: npm publish --tag beta --access public
+
+workflows:
+  #  Runs jest build and sets stores build  info within circleci
+ test_build_publish:
+    jobs:
+      - run_tests:
+          filters:
+            branches:
+              only:
+                - develop
+                - release
+            tags:
+              only: /^v.*/
+      - register_npm:
+            requires:
+              - run_tests
+            filters:
+              tags:
+                only: /^v.*/
+              branches:
+                only: 
+                  - release
+      - beta_release:
+          requires:
+            - register_npm
+          filters:
+            branches:
+              only:
+              - release
+      - package_release:
+          requires:
+              - register_npm
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+
+
+  # filters:
+  # tags:
+  #   only: /^v.*/
+  # branches:
+  #   ignore: /.*/

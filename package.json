@@ -1,0 +1,78 @@
+{
+  "name": "@maarkllc/wolf-tracker",
+  "version": "1.0.0",
+  "description": "Redux middleware for triggering AEM analytics direct-call rules based on redux actions",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c --environment BUILD:production"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "aem",
+    "adobe",
+    "launch",
+    "adobe",
+    "analytics",
+    "direct-call-rules",
+    "redux",
+    "AEM",
+    "SPA",
+    "AEM",
+    "react",
+    "redux",
+    "redux",
+    "middleware"
+  ],
+  "jest": {
+    "verbose": true,
+    "reporters": [
+      "default",
+      [ 
+        "jest-junit", {
+      "outputDirectory": "jest",
+      "outputName": "junit.xml"
+    } ]
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./tests/index.js"
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel-jest": "^26.5.2",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@pixi/jsdoc-template": "^2.5.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "jest-junit": "^10.0.0",
+    "jest-sinon": "^1.0.4",
+    "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
+    "rollup": "^2.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-terser": "^5.2.0"
+  }
+}
