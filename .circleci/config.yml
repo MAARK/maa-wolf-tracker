@@ -11,7 +11,7 @@ defaults: &defaults
 
 # Orchestrate or schedule a set of jobs
 jobs:
-  setup_jobs:
+  run_tests:
     <<: *defaults
     steps:
       - checkout
@@ -28,9 +28,6 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  run_tests:
-    <<: *defaults
-    steps:
       - attach_workspace:
           at: ~/repo
       - run: npm run test
@@ -81,17 +78,7 @@ workflows:
   #  Runs jest build and sets stores build  info within circleci
  test_build_publish:
     jobs:
-      - setup_jobs:
-          filters:
-            branches:
-              only:
-                - develop
-                - release
-            tags:
-              only: /^v.*/
       - run_tests:
-          requires:
-            - setup_jobs
           filters:
             branches:
               only:
