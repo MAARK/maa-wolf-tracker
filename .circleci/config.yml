@@ -85,6 +85,8 @@ workflows:
             tags:
               only: /^v.*/
       - run_tests:
+          requires:
+            - setup_jobs
           filters:
             branches:
               only:
