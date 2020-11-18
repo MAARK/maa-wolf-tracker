@@ -25,14 +25,11 @@
     "adobe",
     "analytics",
     "direct-call-rules",
-    "redux",
     "AEM",
     "SPA",
-    "AEM",
     "react",
     "redux",
-    "redux",
-    "middleware"
+    "redux middleware"
   ],
   "jest": {
     "verbose": true,
