@@ -8,6 +8,13 @@
     "test": "jest",
     "build": "rollup -c --environment BUILD:production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAARK/maa-wolf-tracker"
+  },
+  "bugs": {
+    "url": "https://github.com/MAARK/maa-wolf-tracker/issues"
+  },
   "directories": {
     "lib": "lib"
   },
