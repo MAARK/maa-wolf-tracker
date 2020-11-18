@@ -1,6 +1,6 @@
 {
   "name": "@maarkllc/wolf-tracker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Redux middleware for triggering AEM analytics direct-call rules based on redux actions",
   "main": "index.js",
   "module": "index.esm.js",
@@ -38,11 +38,13 @@
     "verbose": true,
     "reporters": [
       "default",
-      [ 
-        "jest-junit", {
-      "outputDirectory": "jest",
-      "outputName": "junit.xml"
-    } ]
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "jest",
+          "outputName": "junit.xml"
+        }
+      ]
     ],
     "moduleNameMapper": {
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
