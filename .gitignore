@@ -1,0 +1,9 @@
+**/.DS_STORE
+node_modules
+ui.core
+lib
+docs
+package-lock.json
+*.tgz
+jest
+junit.xml
