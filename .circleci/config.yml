@@ -86,16 +86,6 @@ workflows:
             filters:
               tags:
                 only: /^v.*/
-              branches:
-                only: 
-                  - release
-      - beta_release:
-          requires:
-            - register_npm
-          filters:
-            branches:
-              only:
-              - release
       - package_release:
           requires:
               - register_npm
