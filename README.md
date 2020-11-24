@@ -13,7 +13,7 @@ A redux middleware for triggering Adobe Launch direct-call rules.
 
 ## Usage
 
-### launchMiddleware 
+### wolfTracker 
 
 [For defining events check Events Object](#events-object)
 
