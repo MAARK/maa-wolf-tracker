@@ -1,11 +1,11 @@
 {
   "name": "@maarkllc/wolf-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redux middleware for triggering AEM analytics direct-call rules based on redux actions",
   "main": "index.js",
   "module": "index.esm.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "rollup -c --environment BUILD:production"
   },
   "repository": {
