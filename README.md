@@ -13,17 +13,17 @@ A redux middleware for triggering Adobe Launch direct-call rules.
 
 ## Usage
 
-### launchMiddleware 
+### wolfTracker 
 
 [For defining events check Events Object](#events-object)
 
 ``` javascript
 import { createStore, applyMiddleware } from 'redux';
-import launchMiddleWare from 'launch-redux-middleware'
+import wolfTracker from '@maarkllc/wolf-tracker'
 
 const EVENTS =  {...}
 
-const middleware = [launchMiddleWare(EVENTS)]
+const middleware = [wolfTracker(EVENTS)]
 
 const store = createStore(rootReducter, applyMiddleware(...middleware));
 
@@ -46,3 +46,15 @@ const EVENTS = {
   }
 }
 ```
+
+### trackEvent
+
+``` javascript
+
+  import { trackEvent } from '@maarkllc/wolf-tracker'
+
+  trackEvent({
+    satelite: '[Direct call event]',
+    data: {} // data to be tracked 
+  })
+``` 

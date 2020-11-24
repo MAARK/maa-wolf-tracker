@@ -76,7 +76,7 @@ const trackEventFromAction = async (properties, state) => trackEvent({
  * @param {object} state  The current redux state of the application
  */
 
-const launchMiddleware = (events = {}) => (store) => (next) => (action) => {
+const wolfTracker = (events = {}) => (store) => (next) => (action) => {
   if (!testSatelite()) return next(action);
 
   const result = next(action);
@@ -88,4 +88,4 @@ const launchMiddleware = (events = {}) => (store) => (next) => (action) => {
   return result;
 };
 
-export default launchMiddleware;
+export default wolfTracker;
