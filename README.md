@@ -54,7 +54,7 @@ const EVENTS = {
   import { trackEvent } from '@maarkllc/wolf-tracker'
 
   trackEvent({
-    satelite: '[Direct call event]',
+    event: '[Direct call event]',
     data: {} // data to be tracked 
   })
 ``` 
