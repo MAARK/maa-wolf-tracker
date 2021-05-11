@@ -4,7 +4,7 @@ import 'regenerator-runtime/runtime';
 import { trackEvent } from '../src';
 
 const EVENT = {
-  satellite: 'TEST',
+  event: 'TEST',
   data: {
     prop1: true,
     prop2: 'foo',

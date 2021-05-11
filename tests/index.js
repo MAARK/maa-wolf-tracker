@@ -9,7 +9,7 @@ export const MOCK_STORE = {
 
 export const ACTION_EVENTS = {
   ADD_TODO: {
-    satellite: 'ADD_TODO',
+    event: 'ADD_TODO',
     data: {
       prop1: 'foo.bar',
       prop2: 'bar.foo'

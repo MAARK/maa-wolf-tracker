@@ -10,3 +10,4 @@ rollup.config.js
 tests
 jest
 .circleci
+coverage
