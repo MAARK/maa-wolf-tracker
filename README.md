@@ -80,4 +80,12 @@ const EVENTS = {
   status: true 
 }
 
+<<<<<<< HEAD
+  trackEvent({
+    event: '[Direct call event]',
+    data: {} // data to be tracked 
+  })
+``` 
+=======
 ```
+>>>>>>> origin/main

@@ -30,11 +30,11 @@ export function testSatelite() {
 export async function trackEvent({ event = '', data = {} }) {
   if (testSatelite()) {
     // eslint-disable-next-line no-underscore-dangle
-    window._satellite.track(satellite, data);
+    window._satellite.track(event, data);
   }
 
   return {
-    satellite,
+    event,
     data
   };
 }
